@@ -1,0 +1,71 @@
+﻿
+@model List<WebFInal2021Beta.Models.ViewModels.ListTablaViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/css/FondoIndex.css" />
+
+<header class="masthead">
+    <div class="container h-100">
+
+
+        <center><h5 class="text-white">Programas</h5></center>
+        <br />
+
+        <a href="~/Tabla/Nuevo" class="btn btn-sm btn-primary justify-content-around">Agregar</a>
+
+        <div class="row">
+
+
+            <div class="col-md-12">
+
+                <table class="table text-white-50">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+
+
+                    </tr>
+
+                    @foreach (var oElemento in Model)
+                    {
+                        <tr>
+                            <td>@oElemento.ProgramaId</td>
+                            <td>@oElemento.Nombre</td>
+                            <td>@oElemento.Categoria</td>
+
+                            <td>
+                                <a class="btn btn-sm btn-secondary" href="~/Tabla/Editar/@oElemento.ProgramaId">Editar</a>
+                                <a class="btn btn-sm btn-danger" href="~/Tabla/Eliminar/@oElemento.ProgramaId">Eliminar</a>
+                            </td>
+                        </tr>
+
+
+                    }
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="row justify-content-center">
+
+
+
+            <a href="https://localhost:44325/Home/Index" class="btn btn-sm btn-outline-light" role="button" aria-pressed="true">Volver a Pagina Principal</a>
+
+
+
+        </div>
+
+
+    </div>
+
+</header>

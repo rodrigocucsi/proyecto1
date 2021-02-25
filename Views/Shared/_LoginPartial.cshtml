@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+
+
+
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="navbar-nav ml-right my-2 my-lg-0">
+                <li class="nav-item">
+                    @Html.ActionLink("¡Hola   " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link js-scroll-trigger" })
+                </li>
+
+                &nbsp;
+                &nbsp;
+
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a></li>
+            </ul>
+
+        </div>
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+else
+
+{
+
+
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="navbar-nav ml-auto">
+
+
+                @*<li class="nav-item">
+                    <a class="nav-link js-scroll-trigger">
+                      @Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                              </a>
+                               </li>&nbsp
+                               &nbsp
+                          &nbsp*@
+
+
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="https://localhost:44325/Account/Register">Registrarse</a>
+
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="https://localhost:44325/Account/Login">Iniciar Sesión</a>
+
+                </li>
+
+                @*<li class="nav-item">
+                    <a class="nav-link js-scroll-trigger">
+                       @Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                            </a>
+                        </li>*@
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+}
+
+
+

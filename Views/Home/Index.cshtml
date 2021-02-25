@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "Soporte IT";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/te1.css" />
+
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav ml-right my-2 my-lg-0">
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#page-top">Inicio</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#Descargas">Descargas </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#portfolio">Imagenes</a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contacto </a>
+                    </li>
+
+                    @*<li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="http://localhost:50989/Tabla/Index">Administradores</a>
+                        </li>*@
+
+
+
+
+
+
+                </ul>
+
+
+
+
+            </div>
+
+            @Html.Partial("_LoginPartial")
+
+
+
+
+
+        </div>
+
+
+
+
+    </nav>
+
+
+
+    <header class="masthead">
+        <div class="container h-100">
+
+            <!-- Masthead -->
+
+            <center><div id="fechaHoy" class="text-white-75"></div></center>
+
+            <div class="row h-100 align-items-center justify-content-center text-center">
+
+
+
+
+                <div class="col-lg-10 align-self-end">
+
+
+
+                    <h2 class="text-uppercase text-white font-weight-bold">Software de mantenimiento </h2>
+                    <hr class="divider my-4">
+                </div>
+
+
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 font-weight-light mb-5">Herramientas IT - Desktop/Laptop</p>
+
+                    <center><div id="navegador" class="text-uppercase text-white font-weight-bold"> </div></center>
+
+                    <br>
+                    <br>
+                    <a class="btn btn-outline-light btn-sm js-scroll-trigger" href="https://mega.nz/file/CRRV3AiJ#qF_m8Q-r1fkVQs3c4GhlJblEWWEWylSkMRjxhirNeqM">Acceso Remoto</a>
+                </div>
+
+
+
+                <script type="text/javascript">
+
+                    function navegador() {
+                        var agente = navigator.userAgent;
+                        var navegadores = ["OPR", "Chrome", "Firefox", "Safari", "Trident", "MSIE", "Edge"];
+                        for (var i in navegadores) {
+
+
+
+                            if (agente.indexOf(navegadores[i]) != -1) {
+
+                                return navegadores[i];
+
+                            }
+
+
+
+                        }
+
+                    }
+
+                    var browser = document.getElementById("navegador");
+                    window.onload = function () {
+                        browser.innerHTML = "Estas utilizando el navegador: " + navegador();
+
+                    }
+
+                </script>
+
+
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <script>
+
+        //FECHA ACTUAL
+
+        var semana = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
+        var mes = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+        var fech = new Date();
+        var fecha = document.getElementById("fechaHoy");
+
+
+
+
+
+        fecha.innerHTML = semana[fech.getDay()] + "," + " " + fech.getDate() + " " + "de " + mes[fech.getMonth()] + " " + "de " + fech.getFullYear();
+
+
+
+    </script>
+
+
+    <!-- Services Section -->
+    <section class="page-section" id="Descargas">
+
+        <h3 class="text-light text-center">Descargas</h3>
+
+        <div class="container">
+
+            <hr class="divider my-4">
+            <div class="row justify-content-center">
+                @*<div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-2x fa-tachometer-alt text-primary mb-4"></i>
+                        <p>
+                            <a class="text-light">Test de velocidad de Internet</a>
+                    </div>
+                </div>*@
+                <div class="col-lg-3 col-md-6 text-center text-white-50">
+                    <div class="mt-5 text-light">
+                        <i class="fas fa-4x fa-laptop-code text-light mb-4"></i>
+                        <p>
+                            <a class="text-light" href="https://localhost:44325/Home/Descargas">Programas Edición Gratuita</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-globe text-light mb-4"></i>
+                        <p>
+                            <a class="text-light" href="https://localhost:44325/Home/Navegadores">Navegadores</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-database text-light mb-4"></i>
+                        <p>
+                            <a class="text-light" href="https://localhost:44325/Tabla/Index">Administradores</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/ccleaner2.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/ccleaner2.jpg")" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/driverbooster.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/driverbooster.jpg")" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/adwcleaner.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/adwcleaner.jpg")" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/iobit.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/iobit.jpg")" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/hwmonitor3.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/hwmonitor3.jpg")" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/bluescreenview2.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/bluescreenview2.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/recuva3.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/recuva3.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/hd-tune.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/hd-tune.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/aida2.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/aida2.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/l4.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/l4.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/cp2.jpg")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/cp2.jpg")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <a class="portfolio-box" href="@Url.Content("~/Content/img/vlc2.png")">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/vlc2.png")" alt="">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Categoria
+                            </div>
+                            <div class="project-name">
+                                Software
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

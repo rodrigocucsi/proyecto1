@@ -1,0 +1,6 @@
+﻿body {
+	background: url('../img/fondo_lim2.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}

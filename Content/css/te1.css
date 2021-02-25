@@ -1,0 +1,8 @@
+﻿body {
+    /*background-color: lightslategrey;*/
+    background-image: url('../img/ciudad2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

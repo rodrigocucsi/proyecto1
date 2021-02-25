@@ -1,0 +1,73 @@
+﻿@model WebFInal2021Beta.Models.ViewModels.TablaViewModel
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<link rel="stylesheet" href="~/Content/css/FondoIndex.css" />
+
+<header class="masthead">
+    <div class="container h-100">
+
+
+        <center><h5 class="text-white">Editar</h5></center>
+
+        <br>
+
+        @using (Html.BeginForm("Editar", "Tabla", FormMethod.Post))
+        {
+
+            <div class="row justify-content-center">
+
+                <div class="col-sm-3">
+
+                    @Html.HiddenFor(d => d.ProgramaId)
+
+                    <div>
+
+                        @Html.LabelFor(d => d.Nombre, new { @class = "text-white" })
+                        @Html.TextBoxFor(d => d.Nombre, " ", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "text-danger" })
+                    </div>
+
+                    <br>
+
+
+                    <div>
+
+                        @Html.LabelFor(d => d.Categoria, new { @class = "text-white" })
+                        @Html.TextBoxFor(d => d.Categoria, " ", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Categoria, null, new { @class = "text-danger" })
+
+                    </div>
+                    <br>
+
+
+                    <div>
+
+                        @Html.LabelFor(d => d.Fecha_Alta, new { @class = "text-white" })
+                        @Html.EditorFor(d => d.Fecha_Alta, " ", new { @class = "form-control" })
+                        <br />
+                        @Html.ValidationMessageFor(d => d.Fecha_Alta, null, new { @class = "text-danger" })
+
+                    </div>
+
+                    <br />
+
+                    <div>
+
+                        <center><input value="Guardar" class="btn btn-primary" type="submit" /></center>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        }
+
+    </div>
+
+</header>

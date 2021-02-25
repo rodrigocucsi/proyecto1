@@ -1,0 +1,6 @@
+﻿body {
+	background: url('../img/fondo_so.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}

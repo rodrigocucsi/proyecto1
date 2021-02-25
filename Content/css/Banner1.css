@@ -1,0 +1,11 @@
+﻿Banner1 {
+	width: 800px;
+	height: 100px;
+	position: relative;
+	background-image: url('../img/aida.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+	
+}
